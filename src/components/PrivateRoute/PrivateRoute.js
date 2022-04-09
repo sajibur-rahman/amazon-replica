@@ -5,7 +5,7 @@ import auth from '../../firebase';
 const PrivateRoute = () => {
     
     const location = useLocation();
-    return auth ? <Outlet/> : <Navigate to='/login' state={{from:location}} replace/>
+    return auth.currentUser ? <Outlet/> : <Navigate to='/login' state={{from:location}} replace/>
 };
 
 export default PrivateRoute;
